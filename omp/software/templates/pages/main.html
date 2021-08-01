@@ -8,10 +8,12 @@
       <div class="container">
          <div class="row">
             <div class="col-lg-12">
+               {%for x in company%}
                <div class="hero-text">
-                  <h5>Renew car insurance in 2 minutes</h5>
-                  <h1 class="text-pink">Get your Car & Bike insured <span class="text-black">@ only $50/Year</span></h1>
+                  <img src="{{x.logo}}" alt="" class="logos">
+                  <h1 class="text-pink">{{x.Company_Name}}<span class="text-black"></span></h1>
                </div>
+               {%endfor%}
             </div>
          </div>
          <div class="row">
@@ -19,7 +21,7 @@
          <!-- Swiper -->
             <div class="swiper-container">
                <div class="swiper-wrapper">
-
+{%for x in slider%}
                   <div class="swiper-slide">
 
                      <div class="slider-text-bg">
@@ -29,26 +31,14 @@
                         </div>
 
                         <div class="text" data-swiper-parallax="1500">
-                           <img src="{%static 'main/images/hero_car_1.png'%}" class="img-fluid" alt="">
+                           <img src="{{x.image}}" class="img-fluid" alt="">
                         </div>
 
                      </div>
+
                   </div>
+ {%endfor%}
 
-                  <div class="swiper-slide">
-
-                     <div class="slider-text-bg">
-
-                        <div class="title" data-swiper-parallax="600">
-                           <img src="{%static 'images/hero_bike_2.png'%}" class="img-fluid" alt="">
-                        </div>
-
-                        <div class="text" data-swiper-parallax="1000">
-                           <img src="{%static 'images/hero_bike_1.png'%}" class="img-fluid" alt="">
-                        </div>
-
-                     </div>
-                  </div>
 
 
                </div>

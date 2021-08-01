@@ -1,9 +1,10 @@
    <nav class="navbar fixed-top navbar-expand-lg">
       <div class="container">
-         <div class="navbar-light bg-dark">
+         {%for x in company%}
+         <div class="navbar-light bg-dark" >
             <!-- Logo -->
             <a class="navbar-brand" href="index.html">
-            <img src="images/head_logo.png" alt="">
+            <img src="{{x.logo}}" alt="" >
             </a>
             <!-- Logo -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
@@ -55,5 +56,6 @@
                </form>
             </div>
          </div>
+         {%endfor%}
       </div>
    </nav>

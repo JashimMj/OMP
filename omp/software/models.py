@@ -2,9 +2,9 @@ from django.db import models
 
 # Create your models here.
 
-class CompanyInformation (models.Model):
+class CompanyInformation(models.Model):
     id=models.AutoField(primary_key=True)
-    Company_Name=models.CharField(max_length=85,null=True,blank=True)
+    Company_Name=models.CharField(max_length=255,null=True,blank=True)
     Company_Address=models.TextField(max_length=255,null=True,blank=True)
     Company_Phone_No=models.CharField(max_length=50,null=True,blank=True)
     Company_Hotline_No=models.CharField(max_length=50,null=True,blank=True)
@@ -25,6 +25,17 @@ class CompanyInformation (models.Model):
     def logo(self):
         try:
             url = self.Company_Logo.url
+        except:
+            url = ' '
+        return url
+
+class SliderM(models.Model):
+    id=models.AutoField(primary_key=True)
+    Simage=models.ImageField(null=True,blank=True)
+
+    def image(self):
+        try:
+            url = self.Simage.url
         except:
             url = ' '
         return url
