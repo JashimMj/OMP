@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="zxx">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Vetiv - Insurance Agency HTML Template</title>
+   <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="{% static 'main/css/bootstrap/bootstrap.css'%}">
+   <link rel="stylesheet" href="{% static 'main/css/bootstrap/bootstrap-grid.css'%}">
+   <link rel="stylesheet" href="{% static 'main/css/bootstrap/bootstrap-reboot.css'%}">
+
+   <!-- Favicon -->
+   <link rel="shortcut icon" href="{% static 'main/images/favicon.ico'%}">
+
+   <!-- Google font -->
+   <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet">
+
+   <!-- owl carousle css -->
+   <link rel="stylesheet" href="{% static 'main/css/owl-carousel/owl.carousel.css'%}" type="text/css">
+   <link rel="stylesheet" href="{% static 'main/css/owl-carousel/owl.theme.default.min.css'%}" type="text/css">
+
+   <!-- Swiper Slider -->
+   <link rel="stylesheet" href="{% static 'main/css/swiper/swiper.min.css'%}">
+   <link rel="stylesheet" href="{% static 'main/css/swiper/swiper-slide.css'%}">
+
+   <!-- Custome CSS -->
+   <link rel="stylesheet" href="{% static 'main/css/custome/style.css'%}">
+
+   <!-- Responsive CSS -->
+   <link rel="stylesheet" href="{% static 'main/css/custome/responsive.css'%}">
+   
+   <!-- Flaticon CSS -->
+   <link rel="stylesheet" href="{% static 'main/font/flaticon.css'%}">
+</head>
+
+<body>
+   <!-- Nav Bar Starts here -->
+    <!-- Messenger Chat Plugin Code -->
+    <div id="fb-root"></div>
+
+    <!-- Your Chat Plugin code -->
+    <div id="fb-customer-chat" class="fb-customerchat">
+    </div>
+
+    <script>
+      var chatbox = document.getElementById('fb-customer-chat');
+      chatbox.setAttribute("page_id", "100214048462338");
+      chatbox.setAttribute("attribution", "biz_inbox");
+
+      window.fbAsyncInit = function() {
+        FB.init({
+          xfbml            : true,
+          version          : 'v11.0'
+        });
+      };
+
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
+{%include 'decoration/header.html'%}
+{%block contant%}
+
+   <!-- Newsletter section Ends here -->
+{%endblock%}
+
+   <!-- Footer section starts here -->
+{%include 'decoration/footer.html'%}
+   <!-- Footer section ends here -->
+   
+   <!-- Bootstrap JavaScript -->
+   
+   <!-- jQuery library -->
+   <script src="{% static 'main/js/bootstrap/jquery.min.js'%}"></script>
+   
+   <!-- Popper JS -->
+   <script src="{% static 'main/js/bootstrap/popper.min.js'%}"></script>
+   
+   <!-- Latest compiled JavaScript -->
+   <script src="{% static 'main/js/bootstrap/bootstrap.min.js'%}"></script>
+   
+   <!-- Jequery -->
+   <script src="{% static 'main/js/aos/jquery-3.4.1.js'%}"></script>
+   
+   <!-- owl-carousel java script -->
+   <script src="{% static 'main/js/owl-carousel/owl.carousel.js'%}"></script>
+   
+   <!-- Swiper JS -->
+   <script src="{% static 'main/js/swiper/swiper.min.js'%}"></script>
+
+   <!-- Plugins JavaScripts -->
+   <script src="{% static 'main/js/plugins/plugins.js'%}"></script>
+</body>
+
+</html>
