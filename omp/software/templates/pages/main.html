@@ -50,7 +50,7 @@
 
             <div class="col-lg-5 col-md-5 col-sm-12 offset-lg-1 offset-md-1">
                <div class="form-head">
-                  <h6>Your vehicle is safe with us</h6>
+                  <h6>Your Interest Paramount To Us</h6>
                </div>
 
                <div class="form-home">
@@ -59,18 +59,18 @@
                         <div class="form-check-inline">
                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
                            <label class="form-check-label" for="exampleRadios1">
-                             Car
+                             Motor Insurance
                            </label>
                          </div>
                          <div class="form-check-inline">
                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
                            <label class="form-check-label" for="exampleRadios2">
-                             Bike
+                             Overseas Mediclaim Policy
                            </label>
                          </div>
                      </div>
                      <div class="form-group">
-                        <input type="text" class="form-control" id="formGroupExampleInput1" placeholder="Enter your vehicle number">
+                        <input type="text" class="form-control" id="formGroupExampleInput1" placeholder="Enter Your Mobile Number">
                      </div>
                      <button type="button" class="btn btn-prim-round mt-4" onclick="window.location.href='form.html';">Insure now</button>
                   </form>
@@ -84,48 +84,48 @@
    <!-- Hero Image Ends here -->
 
    <!-- Three columns start here -->
-   <div class="section-larger bg-img-left-2">
-      <div class="container">
-         <div class="row">
-            <div class="col-lg-4">
-               <div class="numbers">
-                  <h2>96%
-                     <span>5 Star Ratings</span>
-                  </h2>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, iusto!</p>
-                  <div class="number-icons">
-                     <img src="images/number_icon_1.png" class="img-fluid" alt="">
-                  </div>
-               </div>
-            </div>
+<!--   <div class="section-larger bg-img-left-2">-->
+<!--      <div class="container">-->
+<!--         <div class="row">-->
+<!--            <div class="col-lg-4">-->
+<!--               <div class="numbers">-->
+<!--                  <h2>96%-->
+<!--                     <span>5 Star Ratings</span>-->
+<!--                  </h2>-->
+<!--                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, iusto!</p>-->
+<!--                  <div class="number-icons">-->
+<!--                     <img src="images/number_icon_1.png" class="img-fluid" alt="">-->
+<!--                  </div>-->
+<!--               </div>-->
+<!--            </div>-->
 
-            <div class="col-lg-4">
-               <div class="numbers">
-                  <h2>4.5cr
-                     <span>Happy Clients</span>
-                  </h2>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, iusto!</p>
-                  <div class="number-icons">
-                     <img src="images/number_icon_2.png" class="img-fluid" alt="">
-                  </div>
-               </div>
-            </div>
+<!--            <div class="col-lg-4">-->
+<!--               <div class="numbers">-->
+<!--                  <h2>4.5cr-->
+<!--                     <span>Happy Clients</span>-->
+<!--                  </h2>-->
+<!--                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, iusto!</p>-->
+<!--                  <div class="number-icons">-->
+<!--                     <img src="images/number_icon_2.png" class="img-fluid" alt="">-->
+<!--                  </div>-->
+<!--               </div>-->
+<!--            </div>-->
 
-            <div class="col-lg-4">
-               <div class="numbers">
-                  <h2>99%
-                     <span>Quality Products</span>
-                  </h2>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, iusto!</p>
-                  <div class="number-icons">
-                     <img src="images/number_icon_3.png" class="img-fluid" alt="">
-                  </div>
-               </div>
-            </div>
+<!--            <div class="col-lg-4">-->
+<!--               <div class="numbers">-->
+<!--                  <h2>99%-->
+<!--                     <span>Quality Products</span>-->
+<!--                  </h2>-->
+<!--                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, iusto!</p>-->
+<!--                  <div class="number-icons">-->
+<!--                     <img src="images/number_icon_3.png" class="img-fluid" alt="">-->
+<!--                  </div>-->
+<!--               </div>-->
+<!--            </div>-->
 
-         </div>
-      </div>
-   </div>
+<!--         </div>-->
+<!--      </div>-->
+<!--   </div>-->
    <!-- Three columns Ends here -->
 
    <!-- Full width Starts here -->
@@ -136,33 +136,19 @@
                <div class="col-lg-5">
                   <div class="point-list">
                      <ul>
+                        {%for x in support%}
                         <li>
                            <div class="list-icon">
-                              <span class="flaticon-credit"></span>
+                              <span class="{{x.icon}}"></span>
                            </div>
+
                            <div class="list-text">
-                              <h6>Incredibly Low Prices</h6>
-                              <p>Get the best price, every single time. for your Car and Bike</p>
+                              <h6>{{x.Title}}</h6>
+                              <p>{{x.Discription}}</p>
                            </div>
                         </li>
-                        <li>
-                           <div class="list-icon">
-                              <span class="flaticon-car-insurance-2"></span>
-                           </div>
-                           <div class="list-text">
-                              <h6>Terribly Convenient</h6>
-                              <p>Get the best price, every single time. for your Car and Bike</p>
-                           </div>
-                        </li>
-                        <li>
-                           <div class="list-icon">
-                              <span class="flaticon-document"></span>
-                           </div>
-                           <div class="list-text">
-                              <h6>Zero-Hassle Claims</h6>
-                              <p>Get the best price, every single time. for your Car and Bike</p>
-                           </div>
-                        </li>
+                        {%endfor%}
+
                      </ul>
                   </div>
                </div>
@@ -170,10 +156,15 @@
                   <div class="img-container">
                      <img src="images/home_img_1.png" class="img-fluid mt" alt="">
                   </div>
+                  {%for x in support_title%}
                   <div class="text-container">
-                     <h2><span class="sub-heading-1">Special support & caring</span>Insurance Company</h2>
-                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, fugit laudantium? Ad quibusdam blanditiis quas aspernatur.</p>
+                     <h2><span class="sub-heading-1">{{x.Title}}
+                     {%for y in company%}
+                     </span>{{y.Company_Name}}</h2>
+                     {%endfor%}
+                     <p>{{x.Discription}}</p>
                   </div>
+                  {%endfor%}
                </div>
             </div>
          </div>
@@ -187,61 +178,31 @@
             <div class="row">
                <div class="col-lg-6 col-md-12 col-sm-12">
                   <div class="row">
+                      {%for x in typeinsurance%}
                      <div class="col-lg-6 col-md-6 col-sm-6">
-
                         <div class="col-icon-bg-cntr">
-                           <div class="icon-cntr"><span class="flaticon-fender-bender"></span></div>
+                           <div class="icon-cntr"><img src="{{x.icontype}}" alt="" class="iimage"></div>
                            <div class="col-text-cntr">
-                              <h6>Accidents</h6>
-                              <p>Lorem ipsum, dolor sit amet conse ctetur adipi.</p>
+                              <h6>{{x.Title}}</h6>
+                              <p>{{x.Discription}}</p>
                            </div>
                         </div>
 
                      </div>
-
-                     <div class="col-lg-6 col-md-6 col-sm-6">
-
-                        <div class="col-icon-bg-cntr">
-                           <div class="icon-cntr"><span class="flaticon-fire-1"></span></div>
-                           <div class="col-text-cntr">
-                              <h6>Fire</h6>
-                              <p>Lorem ipsum, dolor sit amet conse ctetur adipi.</p>
-                           </div>
-                        </div>
-
-                     </div>
-
-                     <div class="col-lg-6 col-md-6 col-sm-6">
-                        <div class="col-icon-bg-cntr">
-                           <div class="icon-cntr"><span class="flaticon-theft"></span></div>
-                           <div class="col-text-cntr">
-                              <h6>Theft</h6>
-                              <p>Lorem ipsum, dolor sit amet conse ctetur adipi.</p>
-                           </div>
-                        </div>
-                     </div>
-
-                     <div class="col-lg-6 col-md-6 col-sm-6">
-                        <div class="col-icon-bg-cntr">
-                           <div class="icon-cntr"><span class="flaticon-flood"></span></div>
-                           <div class="col-text-cntr">
-                              <h6>Calamities</h6>
-                              <p>Lorem ipsum, dolor sit amet conse ctetur adipi.</p>
-                           </div>
-                        </div>
-                     </div>
+                      {%endfor%}
 
                   </div>
                </div>
 
                <div class="col-lg-6 col-md-12 col-sm-12 text-container-right">
-
+                    {%for x in type%}
                      <div class="container-text">
                         <h2>What's Covered Under Our Insurance?</h2>
-                        <span class="sub-heading-2">Specific methods and techniques have changed considerably over the years</span>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis cumque esse excepturi voluptate iusto soluta optio autem nulla aperiam deleniti!</p>
+                        <span class="sub-heading-2">{{x.Title}}</span>
+                        <p>{{x.Discription}}</p>
                         <button type="Submit" class="btn btn-prim-round mt-lg-5 mt-md-3 mt-sm-3">Read more</button>
                      </div>
+                   {%endfor%}
 
                </div>
             </div>
@@ -253,137 +214,108 @@
    <div class="section bg-color">
       <div class="container">
          <div class="row">
+             {%for x in customer%}
             <div class="col-lg-5 col-md-5 col-sm-12 vertical-cntr">
                <div class="feedback">
-                  <img src="images/feedback_bg.png" class="img-fluid" alt="">
+                  <img src="{%static 'main/images/feedback_bg.png'%}" class="img-fluid" alt="">
                   <span class="sub-heading-1">Customer’s Feedback</span>
-                  <h2>Words of Appreciation</h2>
+                  <h2>{{x.Title}}</h2>
 
                <div class="img-container">
                   <img src="images/feedback.png" class="img-fluid" alt="">
                </div>
-                  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officia tempora dolor mollitia, aspernatur ratione incidunt quia at fugiat dicta odio.</p>
+                  <p>{{x.Discription}}</p>
                </div>
             </div>
+             {%endfor%}
+
             <div class="col-lg-6 col-md-6 col-sm-12 offset-lg-1 offset-md-1">
                <div class="feedback-list">
                   <div class="client-feedback-left owl-carousel owl-theme">
+                      {%for x in customer_fit%}
                      <div class="item-1">
                         <div class="row">
                            <div class="col-lg-12">
                               <div class="feedback-content-left">
                                     <div class="feedback-pic-left">
-                                       <img src="images/pic_1.jpg" alt="">
+                                       <img src="{{x.imagecustomer}}" alt="">
                                     </div>
                                     <div class="feedback-text-left">
-                                       <h6>BMW Owner, NYC
-                                          <span>Mark Smith</span>
+                                       <h6>{{x.Title}}
+                                          <span>{{x.Customer_Name}}</span>
                                        </h6>
-                                       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus ea pariatur quae quis reprehenderit quisquam, iusto laborum fuga!</p>
+                                       <p>{{x.Discription}}</p>
                                     </div>
                               </div>
                            </div>
                         </div>
                      </div>
+                      {%endfor%}
 
-                     <div class="item-1">
-                        <div class="row">
-                           <div class="col-lg-12">
-                              <div class="feedback-content-left">
-                                    <div class="feedback-pic-left">
-                                       <img src="images/pic_1.jpg" alt="">
-                                    </div>
-                                    <div class="feedback-text-left">
-                                       <h6>BMW Owner, NYC
-                                          <span>Mark Smith</span>
-                                       </h6>
-                                       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus ea pariatur quae quis reprehenderit quisquam, iusto laborum fuga!</p>
-                                    </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-
-                     <div class="item-1">
-                        <div class="row">
-                           <div class="col-lg-12">
-                              <div class="feedback-content-left">
-                                    <div class="feedback-pic-left">
-                                       <img src="images/pic_1.jpg" alt="">
-                                    </div>
-                                    <div class="feedback-text-left">
-                                       <h6>BMW Owner, NYC
-                                          <span>Mark Smith</span>
-                                       </h6>
-                                       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus ea pariatur quae quis reprehenderit quisquam, iusto laborum fuga!</p>
-                                    </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
 
 
                   </div>
                </div>
             </div>
+
          </div>
       </div>
    </div>
 
    <!-- Feedback section Ends here -->
 
-   <!-- Client section Starts here -->
-   <div class="section-larger bg-img-right">
-      <div class="container">
-         <div class="row">
-            <div class="col-lg-12">
-               <div class="title-center">
-                  <span class="sub-heading-1">200+ Companies</span>
-                  <h2>Connected with us</h2>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, dignissimos.</p>
-               </div>
-            </div>
-         </div>
-         <div class="row">
-            <div class="col-lg-2 col-md-4 col-sm-4 col-6 client"><img src="images/client_1.jpg" class="img-fluid" alt=""></div>
-            <div class="col-lg-2 col-md-4 col-sm-4 col-6 client"><img src="images/client_2.jpg" class="img-fluid" alt=""></div>
-            <div class="col-lg-2 col-md-4 col-sm-4 col-6 client"><img src="images/client_1.jpg" class="img-fluid" alt=""></div>
-            <div class="col-lg-2 col-md-4 col-sm-4 col-6 client"><img src="images/client_2.jpg" class="img-fluid" alt=""></div>
-            <div class="col-lg-2 col-md-4 col-sm-4 col-6 client"><img src="images/client_2.jpg" class="img-fluid" alt=""></div>
-            <div class="col-lg-2 col-md-4 col-sm-4 col-6 client"><img src="images/client_1.jpg" class="img-fluid" alt=""></div>
-         </div>
-      </div>
-   </div>
-   <!-- Client section Ends here -->
+<!--   &lt;!&ndash; Client section Starts here &ndash;&gt;-->
+<!--   <div class="section-larger bg-img-right">-->
+<!--      <div class="container">-->
+<!--         <div class="row">-->
+<!--            <div class="col-lg-12">-->
+<!--               <div class="title-center">-->
+<!--                  <span class="sub-heading-1">200+ Companies</span>-->
+<!--                  <h2>Connected with us</h2>-->
+<!--                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, dignissimos.</p>-->
+<!--               </div>-->
+<!--            </div>-->
+<!--         </div>-->
+<!--         <div class="row">-->
+<!--            <div class="col-lg-2 col-md-4 col-sm-4 col-6 client"><img src="images/client_1.jpg" class="img-fluid" alt=""></div>-->
+<!--            <div class="col-lg-2 col-md-4 col-sm-4 col-6 client"><img src="images/client_2.jpg" class="img-fluid" alt=""></div>-->
+<!--            <div class="col-lg-2 col-md-4 col-sm-4 col-6 client"><img src="images/client_1.jpg" class="img-fluid" alt=""></div>-->
+<!--            <div class="col-lg-2 col-md-4 col-sm-4 col-6 client"><img src="images/client_2.jpg" class="img-fluid" alt=""></div>-->
+<!--            <div class="col-lg-2 col-md-4 col-sm-4 col-6 client"><img src="images/client_2.jpg" class="img-fluid" alt=""></div>-->
+<!--            <div class="col-lg-2 col-md-4 col-sm-4 col-6 client"><img src="images/client_1.jpg" class="img-fluid" alt=""></div>-->
+<!--         </div>-->
+<!--      </div>-->
+<!--   </div>-->
+<!--   &lt;!&ndash; Client section Ends here &ndash;&gt;-->
 
-   <!-- Insurance section Start here -->
-   <div class="section bg-color">
-      <div class="container">
-         <div class="row">
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 car-pb">
-               <div class="new-car">
-                  <div class="new-veh-img"><img src="images/new_car.png" class="img-fluid" alt=""></div>
-                  <div class="new-veh-text">
-                     <p><strong>Got new car?</strong></p>
-                     <p>Save flat 35% on first insurance</p>
-                     <a href="#">Insuare</a>
-                  </div>
+<!--   &lt;!&ndash; Insurance section Start here &ndash;&gt;-->
+<!--   <div class="section bg-color">-->
+<!--      <div class="container">-->
+<!--         <div class="row">-->
+<!--            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 car-pb">-->
+<!--               <div class="new-car">-->
+<!--                  <div class="new-veh-img"><img src="images/new_car.png" class="img-fluid" alt=""></div>-->
+<!--                  <div class="new-veh-text">-->
+<!--                     <p><strong>Got new car?</strong></p>-->
+<!--                     <p>Save flat 35% on first insurance</p>-->
+<!--                     <a href="#">Insuare</a>-->
+<!--                  </div>-->
 
-               </div>
-            </div>
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-               <div class="new-car">
-                  <div class="new-veh-img"><img src="images/new_bike.png" class="img-fluid" alt=""></div>
-                  <div class="new-veh-text">
-                     <p><strong>Bought new Bike?</strong></p>
-                     <p>Save flat 35% on first insurance</p>
-                     <a href="#">Insuare</a>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-   </div>
+<!--               </div>-->
+<!--            </div>-->
+<!--            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">-->
+<!--               <div class="new-car">-->
+<!--                  <div class="new-veh-img"><img src="images/new_bike.png" class="img-fluid" alt=""></div>-->
+<!--                  <div class="new-veh-text">-->
+<!--                     <p><strong>Bought new Bike?</strong></p>-->
+<!--                     <p>Save flat 35% on first insurance</p>-->
+<!--                     <a href="#">Insuare</a>-->
+<!--                  </div>-->
+<!--               </div>-->
+<!--            </div>-->
+<!--         </div>-->
+<!--      </div>-->
+<!--   </div>-->
 
    <!-- Insurance section Ends here -->
 

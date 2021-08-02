@@ -4,3 +4,7 @@ from .models  import *
 
 admin.site.register(CompanyInformation)
 admin.site.register(SliderM)
+admin.site.register(SpecialSupport)
+admin.site.register(TypeOfInsurance)
+admin.site.register(CustomerFeedback)
+admin.site.register(Awards)

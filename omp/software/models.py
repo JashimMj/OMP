@@ -39,3 +39,61 @@ class SliderM(models.Model):
         except:
             url = ' '
         return url
+
+class SpecialSupport(models.Model):
+    id=models.AutoField(primary_key=True)
+    Title=models.CharField(max_length=200,null=True,blank=True)
+    Discription=models.TextField(max_length=200,null=True,blank=True)
+    icon=models.CharField(max_length=200,null=True,blank=True)
+
+    def __str__(self):
+        return self.Title
+
+class TypeOfInsurance(models.Model):
+    id = models.AutoField(primary_key=True)
+    Title = models.CharField(max_length=200, null=True, blank=True)
+    Discription = models.TextField(max_length=200, null=True, blank=True)
+    icon = models.ImageField(upload_to='icon', null=True, blank=True)
+    def __str__(self):
+        return self.Title
+
+    def icontype(self):
+        try:
+            url = self.icon.url
+        except:
+            url = ' '
+        return url
+
+class CustomerFeedback(models.Model):
+    id = models.AutoField(primary_key=True)
+    Title = models.CharField(max_length=200, null=True, blank=True)
+    Customer_Name=models.CharField(max_length=200, null=True, blank=True)
+    Discription = models.TextField(max_length=200, null=True, blank=True)
+    Customer_image = models.ImageField(upload_to='icon', null=True, blank=True)
+
+    def __str__(self):
+        return self.Title
+
+    def imagecustomer(self):
+        try:
+            url = self.Customer_image.url
+        except:
+            url = ' '
+        return url
+
+
+class Awards(models.Model):
+    id = models.AutoField(primary_key=True)
+    Title = models.CharField(max_length=200, null=True, blank=True)
+    Discription = models.TextField(max_length=200, null=True, blank=True)
+    Award_image = models.ImageField(upload_to='icon', null=True, blank=True)
+
+    def __str__(self):
+        return self.Title
+
+    def Awardimage(self):
+        try:
+            url = self.Award_image.url
+        except:
+            url = ' '
+        return url
