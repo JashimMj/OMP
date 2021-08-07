@@ -1,0 +1,169 @@
+{%extends 'index.html'%}
+{%block contant%}
+{%load static%}
+   <div class="section-larger">
+      <div class="container">
+
+         <div class="insure-text bg-color-2 p-4">
+            <div class="row">
+               <div class="col-lg-8 col-md-8 col-sm-9 col-xs-9">
+                  <h4 class="highlight"><strong class="text-yellow">Upto 80% Off*</strong><br> on Comprehensive Car Insurance
+                  </h4>
+                  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum quo ullam id incidunt accusamus numquam.</p>
+               </div>
+               <div class="col-lg-4 col-md-4 col-sm-3 col-xs-3">
+                  <div class="img-container-sml text-right">
+                     <img src="images/about_step_1.png" alt="">
+                  </div>
+               </div>
+
+            </div>
+         </div>
+<form action="" data-class-url="{%url 'test'%}" id="idform">
+     <h5>Need some more details</h5>
+         <div class="row">
+
+            <div class="col-lg-5 col-md-6 col-sm-12">
+               <div class="insure-form">
+
+
+                     <h6>Personal Info</h6>
+                     <div class="form-group">
+                        <input type="text" class="form-control" id="formGroupExampleInput12" placeholder="Name">
+                     </div>
+                    <h6>Date Of Birth</h6>
+                     <div class="form-group">
+                        <input type="date" class="form-control" id="formGroupExampleInput22">
+                     </div>
+
+                     <h6>Purpose to your visit</h6>
+                     <div class="form-group form-row">
+                        <div class="col-lg-12">
+                           <select class="form-control custom-select mr-sm-2" id="select1">
+                              <option selected>Select List</option>
+                               {%for x in typeinsurance%}
+                              <option value="{{x.id}}">{{x.Title}}</option>
+                               {%endfor%}
+                           </select>
+                        </div>
+
+                     </div>
+
+                      <h6>Country to be travel</h6>
+                     <div class="form-group form-row">
+                        <div class="col-lg-12">
+                           <select class="form-control custom-select mr-sm-2" id="select2">
+
+
+                           </select>
+                        </div>
+
+                         <h6>People to be Covered</h6>
+                        <div class="col-lg-12">
+                           <select class="form-control custom-select mr-sm-2" id="inlineFormCustomSelect33">
+                              <option selected>Select List</option>
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="3">4</option>
+                              <option value="3">5</option>
+                              <option value="3">6</option>
+                           </select>
+                        </div>
+
+                     </div>
+
+
+
+               </div>
+
+            </div>
+            <div class="col-lg-5 col-md-6 col-sm-12">
+               <div class="insure-form">
+                     <h6>Date of Travel Start</h6>
+                     <div class="form-group">
+                        <input type="date" class="form-control" id="formGroupExampleInput1">
+                     </div>
+                   <h6>Date of Travel End</h6>
+                     <div class="form-group">
+                        <input type="date" class="form-control" id="formGroupExampleInput2">
+                     </div>
+                   <h6>Days you will stay</h6>
+                     <div class="form-group">
+                        <input type="number" class="form-control" id="formGroupExampleInput23">
+                     </div>
+
+                     <h6>Purpose to your visit</h6>
+                     <div class="form-group form-row">
+                        <div class="col-lg-12">
+                           <select class="form-control custom-select mr-sm-2" id="inlineFormCustomSelect1">
+                              <option selected>Select List</option>
+                              <option value="1">One</option>
+                              <option value="2">Two</option>
+                              <option value="3">Three</option>
+                           </select>
+                        </div>
+
+                     </div>
+
+                      <h6>Country to be travel</h6>
+                     <div class="form-group form-row">
+                        <div class="col-lg-12">
+                           <select class="form-control custom-select mr-sm-2" id="inlineFormCustomSelect2">
+                              <option selected>Select List</option>
+                              <option value="1">One</option>
+                              <option value="2">Two</option>
+                              <option value="3">Three</option>
+                           </select>
+                        </div>
+
+                         <h6>People to be Covered</h6>
+                        <div class="col-lg-12">
+                           <select class="form-control custom-select mr-sm-2" id="inlineFormCustomSelect3">
+                              <option selected>Select List</option>
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="3">4</option>
+                              <option value="3">5</option>
+                              <option value="3">6</option>
+                           </select>
+                        </div>
+
+                     </div>
+
+
+
+                     <button type="button" class="btn btn-ter-round mt-4">Reset</button>
+                     <button type="button" class="btn btn-prim-round mt-4" onclick="window.location.href='form_buy.html';">Proceed</button>
+
+               </div>
+
+            </div>
+
+              </form>
+
+         </div>
+      </div>
+   </div>
+
+<script>
+$('#select1').change(function(){
+ var url=$('#idform').attr('data-class-url');
+ var insurancetype= $(this).val();
+
+$.ajax({
+    url:url,
+    data:{
+    'insurancetype':insurancetype
+    },
+    success:function(data){
+        $('#select2').html(data)
+    }
+
+
+})
+
+});
+</script>
+{%endblock%}

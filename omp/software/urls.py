@@ -10,6 +10,8 @@ urlpatterns = [
     url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),
     path('',views.mainV,name='main'),
     path('',views.indexV,name='index'),
+    path('Business/&/Studies/',views.businessV,name='business'),
+    path('selecttypeinsurance/',views.selectinsurance,name='test'),
 
 
 

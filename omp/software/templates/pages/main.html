@@ -331,61 +331,23 @@
             </div>
          </div>
          <div class="row">
+             {%for x in award%}
             <div class="col-lg-3 col-md-3 col-sm-12">
                 <div class="col-img-cntr">
                     <div class="img-cntr-claim">
                      <div class="img-container-sml">
-                        <img src="images/awward_1.png" alt="">
+                        <img src="{{x.Awardimage}}" alt="">
                      </div>
                     </div>
                     <div class="col-text-claim">
-                        <h6>Best Company</h6>
-                        <p>Animi illo corrupti amet fugiat quod quaerat quibusdam.</p>
+                        <h6>{{x.Title}}</h6>
+                        <p>{{x.Discription}}</p>
                     </div>
                 </div>
             </div>
+             {%endfor%}
 
-            <div class="col-lg-3 col-md-3 col-sm-12">
-                <div class="col-img-cntr">
-                    <div class="img-cntr-claim">
-                     <div class="img-container-sml">
-                        <img src="images/awward_2.png" alt="">
-                     </div>
-                    </div>
-                    <div class="col-text-claim">
-                        <h6>Great Support</h6>
-                        <p>Animi illo corrupti amet fugiat quod quaerat quibusdam.</p>
-                    </div>
-                </div>
-            </div>
 
-            <div class="col-lg-3 col-md-3 col-sm-12">
-                <div class="col-img-cntr">
-                    <div class="img-cntr-claim">
-                     <div class="img-container-sml">
-                        <img src="images/awward_1.png" alt="">
-                     </div>
-                    </div>
-                    <div class="col-text-claim">
-                        <h6>Growing Business</h6>
-                        <p>Animi illo corrupti amet fugiat quod quaerat quibusdam.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-3 col-sm-12">
-               <div class="col-img-cntr">
-                   <div class="img-cntr-claim">
-                    <div class="img-container-sml">
-                       <img src="images/awward_2.png" alt="">
-                    </div>
-                   </div>
-                   <div class="col-text-claim">
-                       <h6>Excellent Service</h6>
-                       <p>Animi illo corrupti amet fugiat quod quaerat quibusdam.</p>
-                   </div>
-               </div>
-           </div>
 
          </div>
       </div>
@@ -393,39 +355,39 @@
    <!-- Awwards section Ends here -->
 
    <!-- Newsletter section Strats here -->
-      <div class="section-large bg-img-left-2">
-         <div class="container-fluid">
-            <div class="container">
-               <div class="row">
-                  <div class="col-lg-5 col-md-6 col-sm-12 m-auto">
-                     <div class="img-container">
-                        <img src="images/bg_newsletter.png" alt="">
-                     </div>
-                  </div>
-               </div>
-               <div class="row">
-                  <div class="col-lg-7 col-md-7 col-sm-12 m-auto">
-                     <div class="title-center pb-4">
-                        <h4>Subscribe for Newsletter</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, dignissimos.</p>
-                     </div>
-                  </div>
-               </div>
-               <div class="row">
-                  <div class="col-lg-5 col-md-7 col-sm-12 m-auto p-0">
-                     <div class="form">
-                        <div class="form-group m-0">
-                           <div class="input-group">
-                              <input type="text" class="form-control" placeholder="Your email" aria-label="Your email" aria-describedby="basic-addon2" id="basic-addon2">
-                              <div class="input-group-append">
-                                <button class="btn btn-link" type="button">Submit</button>
-                              </div>
-                            </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
+<!--      <div class="section-large bg-img-left-2">-->
+<!--         <div class="container-fluid">-->
+<!--            <div class="container">-->
+<!--               <div class="row">-->
+<!--                  <div class="col-lg-5 col-md-6 col-sm-12 m-auto">-->
+<!--                     <div class="img-container">-->
+<!--                        <img src="images/bg_newsletter.png" alt="">-->
+<!--                     </div>-->
+<!--                  </div>-->
+<!--               </div>-->
+<!--               <div class="row">-->
+<!--                  <div class="col-lg-7 col-md-7 col-sm-12 m-auto">-->
+<!--                     <div class="title-center pb-4">-->
+<!--                        <h4>Subscribe for Newsletter</h4>-->
+<!--                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, dignissimos.</p>-->
+<!--                     </div>-->
+<!--                  </div>-->
+<!--               </div>-->
+<!--               <div class="row">-->
+<!--                  <div class="col-lg-5 col-md-7 col-sm-12 m-auto p-0">-->
+<!--                     <div class="form">-->
+<!--                        <div class="form-group m-0">-->
+<!--                           <div class="input-group">-->
+<!--                              <input type="text" class="form-control" placeholder="Your email" aria-label="Your email" aria-describedby="basic-addon2" id="basic-addon2">-->
+<!--                              <div class="input-group-append">-->
+<!--                                <button class="btn btn-link" type="button">Submit</button>-->
+<!--                              </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                     </div>-->
+<!--                  </div>-->
+<!--               </div>-->
+<!--            </div>-->
+<!--         </div>-->
+<!--      </div>-->
 {%endblock%}

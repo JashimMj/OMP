@@ -1,60 +1,63 @@
+{%load static%}
    <div class="section-padding-none">
       <footer>
          <div class="container">
             <div class="row">
+<!--               <div class="col-lg-3 col-md-3 col-sm-6 footer-sec">-->
+<!--                  <h5>Company</h5>-->
+<!--                  <ul>-->
+<!--                     <li><a href="#">About Us</a></li>-->
+<!--                     <li><a href="#">Board Of Directors</a></li>-->
+<!--                     <li><a href="#">Articles</a></li>-->
+<!--                     <li><a href="#">Insurance</a></li>-->
+<!--                     <li><a href="#">Claims</a></li>-->
+<!--                     <li><a href="#">Careers</a></li>-->
+<!--                  </ul>-->
+<!--               </div>-->
+<!--               <div class="col-lg-3 col-md-3 col-sm-6 footer-sec">-->
+<!--                  <h5>General</h5>-->
+<!--                  <ul>-->
+<!--                     <li><a href="#">Insurance Sector In Country</a></li>-->
+<!--                     <li><a href="#">Types Of Insurance</a></li>-->
+<!--                     <li><a href="#">Motor Vehicles Act 2020</a></li>-->
+<!--                     <li><a href="#">Vehicle Registration</a></li>-->
+<!--                     <li><a href="#">About Your Vehicle Number</a></li>-->
+<!--                  </ul>-->
+<!--               </div>-->
+<!--               <div class="col-lg-3 col-md-3 col-sm-6 footer-sec">-->
+<!--                  <h5>Insurance</h5>-->
+<!--                  <ul>-->
+<!--                     <li><a href="#">Car Insurance</a></li>-->
+<!--                     <li><a href="#">Bike Insurance</a></li>-->
+<!--                     <li><a href="#">Car Insurance Claim</a></li>-->
+<!--                     <li><a href="#">Bike Insurance Claim</a></li>-->
+<!--                     <li><a href="#">Add-on Covers</a></li>-->
+<!--                     <li><a href="#">Car Insurance Comparison</a></li>-->
+<!--                  </ul>-->
+<!--               </div>-->
+               {%for x in company%}
                <div class="col-lg-3 col-md-3 col-sm-6 footer-sec">
-                  <h5>Company</h5>
-                  <ul>
-                     <li><a href="#">About Us</a></li>
-                     <li><a href="#">Board Of Directors</a></li>
-                     <li><a href="#">Articles</a></li>
-                     <li><a href="#">Insurance</a></li>
-                     <li><a href="#">Claims</a></li>
-                     <li><a href="#">Careers</a></li>
-                  </ul>
-               </div>
-               <div class="col-lg-3 col-md-3 col-sm-6 footer-sec">
-                  <h5>General</h5>
-                  <ul>
-                     <li><a href="#">Insurance Sector In Country</a></li>
-                     <li><a href="#">Types Of Insurance</a></li>
-                     <li><a href="#">Motor Vehicles Act 2020</a></li>
-                     <li><a href="#">Vehicle Registration</a></li>
-                     <li><a href="#">About Your Vehicle Number</a></li>
-                  </ul>
-               </div>
-               <div class="col-lg-3 col-md-3 col-sm-6 footer-sec">
-                  <h5>Insurance</h5>
-                  <ul>
-                     <li><a href="#">Car Insurance</a></li>
-                     <li><a href="#">Bike Insurance</a></li>
-                     <li><a href="#">Car Insurance Claim</a></li>
-                     <li><a href="#">Bike Insurance Claim</a></li>
-                     <li><a href="#">Add-on Covers</a></li>
-                     <li><a href="#">Car Insurance Comparison</a></li>
-                  </ul>
-               </div>
-               <div class="col-lg-3 col-md-3 col-sm-6 footer-sec">
-                  <h5>Insurance Company Pvt. Ltd.</h5>
-                  <p class="adres">34/02 Oak Street, lorem ipsum, New South block</p>
+                  <h5>{{x.Company_Name}}</h5>
+                  <p class="adres">{{x.Company_Address}}</p>
                   <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit quisquam.</p>
                </div>
+               {%endfor%}
             </div>
          </div>
          <div class="container-fluid copyright">
             <div class="container">
                <div class="row">
                   <div class="col-xl-9 col-lg-9 col-md-6">
-                     <p>Copyright © 2021. All rights reserved by Company.</p>
+                     <p>Version 001/2021, Developed by Md. Jashim Uddin. Helping Partner  Paramount Insurance</p>
                   </div>
 
                   <div class="col-xl-3 col-lg-3 col-md-6">
                      <div class="copyright-social">
                         <ul>
-                           <li><a href="#"><img src="images/icon_fb.png" class="img-fluid" alt=""></a></li>
-                           <li><a href="#"><img src="images/icon_tw.png" class="img-fluid" alt=""></a></li>
-                           <li><a href="#"><img src="images/icon_li.png" class="img-fluid" alt=""></a></li>
-                           <li><a href="#"><img src="images/icon_yt.png" class="img-fluid" alt=""></a></li>
+                           <li><a href="#"><img src="{%static 'main/images/icon_fb.png'%}" class="img-fluid" alt=""></a></li>
+                           <li><a href="#"><img src="{%static 'main/images/icon_tw.png'%}" class="img-fluid" alt=""></a></li>
+                           <li><a href="#"><img src="{%static 'main/images/icon_li.png'%}" class="img-fluid" alt=""></a></li>
+                           <li><a href="#"><img src="{%static 'main/images/icon_yt.png'%}" class="img-fluid" alt=""></a></li>
                         </ul>
                      </div>
                   </div>

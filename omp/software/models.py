@@ -1,5 +1,6 @@
 from django.db import models
 
+
 # Create your models here.
 
 class CompanyInformation(models.Model):
@@ -97,3 +98,11 @@ class Awards(models.Model):
         except:
             url = ' '
         return url
+
+class ClassType(models.Model):
+    id = models.AutoField(primary_key=True)
+    Title=models.ForeignKey(TypeOfInsurance,on_delete=models.CASCADE,null=True,blank=True)
+    Name=models.CharField(max_length=255,null=True,blank=True)
+    def __str__(self):
+        return self.Name
+

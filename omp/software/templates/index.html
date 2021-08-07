@@ -33,13 +33,16 @@
 
    <!-- Responsive CSS -->
    <link rel="stylesheet" href="{% static 'main/css/custome/responsive.css'%}">
-   
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
    <!-- Flaticon CSS -->
    <link rel="stylesheet" href="{% static 'main/font/flaticon.css'%}">
    <link rel="stylesheet" href="{% static 'my.css'%}">
+   <script src="{%static 'main.js'%}"></script>
 </head>
 
 <body>
+
    <!-- Nav Bar Starts here -->
     <!-- Messenger Chat Plugin Code -->
     <div id="fb-root"></div>
@@ -68,10 +71,13 @@
         fjs.parentNode.insertBefore(js, fjs);
       }(document, 'script', 'facebook-jssdk'));
     </script>
+
+
+
 {%include 'decoration/header.html'%}
 {%block contant%}
 
-   <!-- Newsletter section Ends here -->
+
 {%endblock%}
 
    <!-- Footer section starts here -->

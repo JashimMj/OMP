@@ -19,24 +19,18 @@
                   <li class="nav-item">
                      <a class="nav-link" href="about.html">About Us</a>
                   </li>
-                  <li class="nav-item">
-                     <a class="nav-link" href="car.html">Car</a>
-                  </li>
-                  <li class="nav-item">
-                     <a class="nav-link" href="bike.html">Bike</a>
-                  </li>
+
                   <li class="nav-item dropdown">
                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown_1" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                     Pages
+                     Travel Insurance
                      </a>
                      <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="navbarDropdown">
-                        <a class="dropdown-item" href="car_claim.html">Car Claim</a>
-                        <a class="dropdown-item" href="bike_claim.html">Bike Claim</a>
-                        <a class="dropdown-item" href="policy.html">My Policies</a>
-                        <a class="dropdown-item" href="form.html">Form - 1</a>
-                        <a class="dropdown-item" href="form_buy.html">Form - 2</a>
+                        {%for x in typeinsurance%}
+                        <a class="dropdown-item" href="car_claim.html">{{x.Title}}</a>
+                        {%endfor%}
                      </div>
+
                   </li>
                   <li class="nav-item">
                      <a class="nav-link" href="contact.html">Contact</a>
