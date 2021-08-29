@@ -1,0 +1,52 @@
+<div class="container">
+    {%for x in company%}
+    <div class="navbar-light bg-dark">
+        <!-- Logo -->
+        <a class="navbar-brand" href="index.html">
+            <img src="{{x.logo}}" alt="">
+        </a>
+        <!-- Logo -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{%url 'index'%}">Home</a>
+                </li>
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link" href="about.html">About Us</a>-->
+<!--                </li>-->
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown_1" role="button"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Travel Insurance
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="navbarDropdown">
+                        {%for x in typeinsurance%}
+                        <a class="dropdown-item" href="{%url 'business'%}">{{x.Title}}</a>
+                        {%endfor%}
+                    </div>
+
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{%url 'Contact'%}">Contact Us</a>
+                </li>
+                {%if request.user.is_authenticated%}
+                <li class="nav-item">
+                    <a class="nav-link" href="{%url 'logout'%}">Logout</a>
+                </li>
+                {%else%}
+                <li class="nav-item">
+                    <a class="nav-link" href="{%url 'login'%}">Login</a>
+                </li>
+                {%endif%}
+
+            </ul>
+
+        </div>
+    </div>
+    {%endfor%}
+</div>

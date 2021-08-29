@@ -13,3 +13,15 @@ h1.text-pink {
 .iimage {
     width: 60px;
 }
+img.lglogo {
+    width: 60px;
+}
+.headerop{
+text-align:center;
+}
+.des{
+border:2px solid gray;
+padding:10px;
+background-color:#fff;
+}
+

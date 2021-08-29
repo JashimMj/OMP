@@ -1,0 +1,49 @@
+{%extends 'index.html'%}
+{%block contant%}
+{%load static%}
+<div class="section-larger">
+    <div class="container">
+        {%for x in company%}
+        <div class="headerop">
+            <img src="{{x.logo}}" alt="" class="lglogo">
+            <h3>{{x.Company_Name}}</h3>
+        </div>
+        <div class="bodys">
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6 des">
+                    <p><b>Issue Date:</b> {{abc.issue}}</p>
+                    <p><b>Name:</b> {{abc.Name}}</p>
+                    <p><b>Date Of Birth:</b> {{abc.quatation.Date_Of_Birth}}</p>
+                    <p><b>Date of Travel Start:</b> {{abc.quatation.Sdate}}</p>
+                    <p><b>Date of Travel End:</b> {{abc.quatation.Edate}}</p>
+                    <p><b>Days you will stay:</b> {{abc.quatation.stadate}}</p>
+                    <p><b>Purpose to your visit:</b> {{abc.quatation.TypeInsurance.Title}}</p>
+                    <p><b>Country to be travel:</b> {{abc.quatation.Class_Type.Name}}</p>
+                    <div style="text-align:right;">
+                        <p style="font-size: 18px;"><b>Net: {{abc.quatation.Net}}</b></p>
+
+                        <p style="font-size: 18px;"><b>Vat: {{abc.quatation.Vat}}</b></p>
+                        <p style="font-size: 18px;"><b>Total Payable: {{abc.quatation.Gross}}</b></p>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-3"></div>
+            <div class="col-md-3"></div>
+            <div class="col-md-6" style="text-align:right;">
+                <a href="{%url 'payment'%}" class="btn btn-prim-round mt-4">Continue</a>
+
+            </div>
+            <div class="col-md-3"></div>
+
+        </div>
+
+    </div>
+    {%endfor%}
+</div>
+</div>
+
+
+{%endblock%}

@@ -1,5 +1,6 @@
 from django.db import models
-
+import datetime
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -105,4 +106,81 @@ class ClassType(models.Model):
     Name=models.CharField(max_length=255,null=True,blank=True)
     def __str__(self):
         return self.Name
+
+
+class Quatation(models.Model):
+    id = models.AutoField(primary_key=True)
+    Name=models.CharField(max_length=255,blank=True,null=True)
+    Date_Of_Birth=models.DateField(blank=True,null=True)
+    TypeInsurance=models.ForeignKey(TypeOfInsurance,on_delete=models.CASCADE,null=True,blank=True)
+    Class_Type=models.ForeignKey(ClassType,on_delete=models.CASCADE,null=True,blank=True)
+    Person=models.IntegerField(blank=True,null=True)
+    Sdate=models.DateField(blank=True,null=True)
+    Edate=models.DateField(blank=True,null=True)
+    Country=models.CharField(max_length=255,blank=True,null=True)
+    stadate=models.IntegerField(blank=True,null=True)
+    Puser=models.CharField(max_length=255,blank=True,null=True)
+    customeryear=models.CharField(max_length=255,blank=True,null=True)
+    Net=models.IntegerField(blank=True,null=True)
+    Vat=models.IntegerField(blank=True,null=True)
+    Gross=models.IntegerField(blank=True,null=True)
+
+    def __str__(self):
+        return self.Name
+
+
+class BackgroundImage(models.Model):
+    id = models.AutoField(primary_key=True)
+    Image = models.ImageField(upload_to='background', null=True, blank=True)
+
+
+class Rate(models.Model):
+    id = models.AutoField(primary_key=True)
+    TypeInsurance = models.ForeignKey(TypeOfInsurance, on_delete=models.CASCADE, null=True, blank=True)
+    Class_Type = models.ForeignKey(ClassType, on_delete=models.CASCADE, null=True, blank=True)
+    Coustomer_Year_Start=models.FloatField(default=True)
+    Coustomer_Year_End=models.IntegerField(default=True)
+    Stay_Days_Start=models.IntegerField(default=True)
+    Stay_Days_End=models.IntegerField(default=True)
+    net=models.IntegerField(default=True)
+    Vat=models.IntegerField(default=True)
+    Gross=models.IntegerField(default=True)
+
+
+    def __str__(self):
+        return self.TypeInsurance.Title +' ' +self.Class_Type.Name+' ' + str(self.Coustomer_Year_Start)+'-' + str(self.Coustomer_Year_End)
+
+
+class AdditionalInformation(models.Model):
+    id = models.AutoField(primary_key=True)
+    quatation = models.ForeignKey(Quatation, on_delete=models.CASCADE, null=True, blank=True)
+    Name=models.CharField(max_length=255,blank=True,null=True)
+    Address=models.CharField(max_length=555,blank=True,null=True)
+    Additioninfo=models.CharField(max_length=555,blank=True,null=True)
+    DAddress=models.CharField(max_length=555,blank=True,null=True)
+    phone=models.CharField(max_length=50,blank=True,null=True)
+    Email=models.CharField(max_length=50,blank=True,null=True)
+    NID=models.CharField(max_length=50,blank=True,null=True)
+    pasport=models.ImageField(upload_to='passport',null=True,blank=True)
+    issue=models.DateTimeField(auto_now=True)
+    Bkash=models.CharField(max_length=50,blank=True,null=True)
+
+
+class UserProfileM(models.Model):
+    user=models.OneToOneField(User,on_delete=models.CASCADE,null=True,blank=True)
+    Phone=models.CharField(max_length=100,null=True,blank=True)
+    Present_Address=models.CharField(max_length=255,null=True,blank=True)
+    Permanant_Address=models.CharField(max_length=255,null=True,blank=True)
+    Image=models.ImageField(upload_to='User',null=True,blank=True)
+    objects=models.Manager()
+
+    def images(self):
+        try:
+            urls=self.Image.url
+        except:
+            urls=''
+        return urls
+
+
+
 

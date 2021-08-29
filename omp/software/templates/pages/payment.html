@@ -1,0 +1,47 @@
+{%extends 'index.html'%}
+{%block contant%}
+{%load static%}
+<div class="section-larger">
+    <div class="container" >
+        <div style="text-align:center;">
+            <img src="{%static '/bkash.png'%}" alt="">
+        </div>
+        <div>
+        <p>১। *২৪৭# ডায়াল করে বিকাশ মোবাইল মেন্যুতে যান</p>
+        <p>২। “পেমেন্ট” সিলেক্ট করুন</p>
+        <p>৩। 017-777-05428 বিকাশ একাউন্ট নাম্বার দিন</p>
+        <p>৪। <b>{{abc.quatation.Gross}}</b> টাকার পরিমাণ লিখুন</p>
+        <p>৫। আপনার কেনাকাটার একটি তথ্যসূত্র দিন (আপনি আপনার লেনদেনের উদ্দেশ্য একটি শব্দের মধ্যে উল্লেখ করতে পারেন, উদাহরণস্বরূপ, বিল)*</p>
+        <p>৬। কাউন্টার নাম্বারটি লিখুন <b>1</b> </p>
+        <p>৭। আপনার বিকাশ মোবাইল মেন্যু পিনটি দিয়ে পেমেন্ট সম্পন্ন করুন</p>
+        <p>আপনি বিকাশ থেকে একটি কনফার্মেশন মেসেজ পাবেন।</p>
+        <p>*যদি তথ্যসূত্র বা কাউন্টার নাম্বার কিংবা দুটোই প্রযোজ্য না হয়, তাহলে আপনি এই ধাপগুলো “০” প্রবেশ করিয়ে এরিয়ে যান</p>
+        </div>
+        <div style="padding-top:20px;">
+         <form action="{%url 'confirmation' abc.id%}" method="post" enctype="multipart/form-data">
+             {%csrf_token%}
+            <h6>যে মোবাইল নম্বর দিএ বিকাশ করেছেন সেই নাম্বারটি</h6>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="formGroupExampleInput7" name="mobile" required>
+                        </div>
+             <button type="submit" class="btn btn-prim-round mt-4">Save</button>
+        </form>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+</div>
+{%endblock%}

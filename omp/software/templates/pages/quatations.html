@@ -1,0 +1,55 @@
+{%extends 'index.html'%}
+{%block contant%}
+{%load static%}
+<style>
+{%for x in back%}
+.page{
+    background-image: url({{x.Image.url}});
+    background-size: cover;
+    height: 650px;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    margin: 0 auto;
+    }
+    {%endfor%}
+.tex {
+    margin-top: 85px;
+}
+
+</style>
+<div class="section-larger">
+    <div class="container">
+
+            <div class="page">
+                <div class="row">
+                    <div class="col-md-4"></div>
+                <div class="tex col-md-4">
+                <h3>Quatation</h3>
+                    <p><b>Name:</b> {{abc.Name}}</p>
+
+                    <p><b>Purpose to your visit: </b>{{abc.TypeInsurance.Title}}</p>
+
+                    <p><b>Country to be travel: </b>{{abc.Class_Type.Name}}</p>
+
+                     <p><b>Age: </b>{{abc.customeryear}} Year</p>
+                    <p><b>Date of Travel Start: </b> {{abc.Sdate}}</p>
+
+                    <p><b>Date of Travel End: </b> {{abc.Edate}}</p>
+
+                     <p><b>Days you will stay: </b>{{abc.stadate}} Days</p>
+                     <p><b>Net: </b>{{abc.Net}} </p>
+                     <p><b>Vat: </b>{{abc.Vat}} </p>
+                     <p><b>Gross: </b>{{abc.Gross}} </p>
+
+
+
+
+                    </div>
+                     <div class="col-md-4"></div>
+            </div>
+                <div><a href="{%url 'addition' abc.id%}" class="btn btn-ter-round mt-4">Continue </a></div>
+        </div>
+    </div>
+</div>
+{%endblock%}

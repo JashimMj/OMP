@@ -1,0 +1,91 @@
+{%extends 'index.html'%}
+{%block contant%}
+{%load static%}
+<div class="section-larger">
+    <div class="container">
+
+        <div class="insure-text bg-color-2 p-4">
+            <div class="row">
+                <div class="col-lg-8 col-md-8 col-sm-9 col-xs-9">
+                    <h4 class="highlight"><strong class="text-yellow">Upto 80% Off*</strong><br> on Comprehensive Car
+                        Insurance
+                    </h4>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum quo ullam id incidunt
+                        accusamus numquam.</p>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-3 col-xs-3">
+                    <div class="img-container-sml text-right">
+                        <img src="images/about_step_1.png" alt="">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <form action="{%url 'addtionsave' quat.id%}" method="post" enctype="multipart/form-data">
+            {%csrf_token%}
+            <h5>Need some more details</h5>
+            <div class="row">
+
+                <div class="col-lg-5 col-md-6 col-sm-12">
+                    <div class="insure-form">
+
+
+                        <h6>Personal Info</h6>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="formGroupExampleInput1" placeholder="Name" name="name" value="{{quat.Name}}" required readonly>
+                        </div>
+                        <h6>Home Address</h6>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="formGroupExampleInput2" name="homeaddress" required>
+                        </div>
+                        <h6>Phone Number </h6>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="formGroupExampleInput3" name="phone" required>
+                        </div>
+                        <h6>National ID</h6>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="formGroupExampleInput4" name="nid" required>
+                        </div>
+
+
+
+
+                    </div>
+
+                </div>
+                <div class="col-lg-5 col-md-6 col-sm-12">
+                    <div class="insure-form">
+
+                        <h6>Email</h6>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="formGroupExampleInput5" name="email" required>
+                        </div>
+                        <h6>Delivery Address</h6>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="formGroupExampleInput6" name="daddress" required>
+                        </div>
+                        <h6>Additional Information</h6>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="formGroupExampleInput7" name="ainfo" required>
+                        </div>
+                        <h6>Passport Copy</h6>
+                        <div class="form-group">
+                            <input type="file" class="form-control" id="formGroupExampleInput8" name="pcopy" required>
+                        </div>
+
+
+
+
+                    </div>
+
+                </div>
+            </div>
+            <button type="submit" class="btn btn-prim-round mt-4">
+                Save
+            </button>
+        </form>
+
+    </div>
+</div>
+</div>
+{%endblock%}

@@ -1,0 +1,19 @@
+{%extends 'index.html'%}
+{%block contant%}
+{%load static%}
+<div class="section-larger">
+    <div class="container">
+        {%for x in company%}
+        <div>
+            <h4>{{x.Company_Name}}</h4>
+            <p>{{x.Company_Address}}</p>
+            <p>{{x.Company_Phone_No}}</p>
+            <p>{{x.Company_Hotline_No}}</p>
+            <p>{{x.Company_Fax_No}}</p>
+            <p>{{x.Company_Email_No}}</p>
+            <p>{{x.Company_Website_No}}</p>
+        </div>
+        {%endfor%}
+    </div>
+</div>
+{%endblock%}
